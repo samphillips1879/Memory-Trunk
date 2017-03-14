@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# package configurations
+
+TAGGIT_CASE_INSENSITIVE = True
 
 
 # Internationalization
