@@ -49,8 +49,3 @@ class TestProfileModelCreation(TestCase):
         self.assertIn(self.user_1, new_profile.users_followed.all())
         new_profile.unfollow_user(self.user_1)
         self.assertNotIn(self.user_1, new_profile.users_followed.all())
-        
-
-
-
-
