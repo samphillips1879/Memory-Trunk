@@ -1,1 +1,2 @@
-from django.db import models
+# __all__ = ['Profile',]
+from .profile_model import Profile
