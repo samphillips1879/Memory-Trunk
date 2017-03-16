@@ -32,15 +32,11 @@ class Register(TemplateView):
             password = data['password'],
             first_name = data['first_name'],
             last_name = data['last_name'],
-            )
+        )
 
         Profile.objects.create(
             user = new_user,
-            street_address = data['street_address'],
-            city = data['city'],
-            state = data['state'],
-            zip_code = data['zip_code']
-            )
+        )
 
         return login_view.login_customer(request)
 
