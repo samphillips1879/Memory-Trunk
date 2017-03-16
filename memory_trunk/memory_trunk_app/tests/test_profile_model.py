@@ -3,9 +3,18 @@ from django.contrib.auth.models import User
 from memory_trunk_app import models
 from memory_trunk_app.models.profile_model import Profile
 
-class TestProfileModelCreation(TestCase):
+class TestProfileModel(TestCase):
     """
-    Purpose: Tests the instantiation of the Profile model to ensure new instances are created correctly with all values assigned properly
+    Purpose: 
+        Tests the instantiation of the Profile model and all methods
+        attached to it
+
+    Methods:
+        setUpTestData
+        test_new_profile_is_of_class_Profile
+        test_new_profile_values_are_instantiated
+        test_users_can_be_followed
+        test_users_can_be_unfollowed
 
     Author: Sam Phillips <samcphillips.com>
     """

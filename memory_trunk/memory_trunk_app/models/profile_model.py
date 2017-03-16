@@ -12,6 +12,10 @@ class Profile(models.Model):
         users_followed -- Many to Many field representing the other users 
                           followed by this Profile
 
+    Methods:
+        follow_user
+        unfollow_user
+
     Author: Sam Phillips <samcphillips.com>
     """
 
