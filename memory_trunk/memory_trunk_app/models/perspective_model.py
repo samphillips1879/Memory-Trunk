@@ -41,6 +41,9 @@ class Perspective(models.Model):
     memories = models.ManyToManyField(Memory)
     tags = TaggableManager()
 
+    def __str__(self):
+        return "{}".format(self.title)
+
     def add_tags(self, tags):
         """
         Purpose:
