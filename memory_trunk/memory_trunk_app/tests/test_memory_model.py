@@ -6,7 +6,7 @@ import datetime
 class TestMemoryModel(TestCase):
     """
     Purpose:
-        Tests the instantiation of the Memory model
+        Tests the instantiation and all methods of the Memory model
 
     Methods:
         setUpTestData

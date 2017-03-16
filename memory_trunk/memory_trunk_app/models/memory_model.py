@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
-from datetime import datetime
 
 class Memory(models.Model):
     """
@@ -20,7 +19,7 @@ class Memory(models.Model):
                    text string
         happy_factor -- How happy this memory is for the User (integer 0-10)
         sad_factor -- How sad this memory is for the User (integer 0-10)
-        tags -- Keywords relating to this memory 
+        tags -- Keywords relating to this Memory 
                 (django-taggit https://github.com/alex/django-taggit)
         likes -- Many to Many field tracking which users have "liked" this 
                  Memory
@@ -33,7 +32,7 @@ class Memory(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     is_public = models.PositiveIntegerField()
     date = models.DateField()
     location = models.CharField(max_length=100)
@@ -42,6 +41,9 @@ class Memory(models.Model):
     sad_factor = models.PositiveIntegerField()
     tags = TaggableManager()
     likes = models.ManyToManyField(User, related_name="memory_likes")
+
+    def __str__(self):
+        return "{}".format(self.title)
 
     def add_tags(self, tags):
         """
