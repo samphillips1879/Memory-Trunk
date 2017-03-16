@@ -2,26 +2,24 @@
 from django.views.generic.base import TemplateView
 # from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.contrib.auth import logout, login, authenticate
-from django.http import HttpResponse, HttpResponseRedirect
-
-from bang_app.models import Product, ProductType, Customer,CustomerOrder
-from bang_app.views import login_view
-
+# from django.contrib.auth import logout, login, authenticate
+# from django.http import HttpResponse, HttpResponseRedirect
+from memory_trunk_app import models
+from .login_user import login_user
 
 
-class Register(TemplateView):
+class UserRegistration(TemplateView):
     template_name = 'register.html'
 
-    def POST(request):
+def register_user(request):
         """
         Purpose: 
-            Register a user, create their Profile, and log them in 
+            Register a User, create their Profile, and log them in 
         
         Author: Sam Phillips <samcphillips.com>
         """
         # create_user is what holds the username/password. (Django magic)
-        # then, we pass that into the 1:1 field on our model, Customer
+        # then, we pass that into the 1:1 field on our model
         # send all of the information to login_customer on login_view.py
 
         data = request.POST
@@ -34,10 +32,10 @@ class Register(TemplateView):
             last_name = data['last_name'],
         )
 
-        Profile.objects.create(
+        models.Profile.objects.create(
             user = new_user,
         )
 
-        return login_view.login_customer(request)
+        return login_user(request)
 
 
