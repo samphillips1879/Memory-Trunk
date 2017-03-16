@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # from django.contrib.auth import logout, login, authenticate
 # from django.http import HttpResponse, HttpResponseRedirect
 from memory_trunk_app import models
-from .login_user import login_user
+from .login_views import login_user
 
 
 class UserRegistration(TemplateView):
