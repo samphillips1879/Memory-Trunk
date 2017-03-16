@@ -8,6 +8,7 @@ from memory_trunk_app import models
 from .login_views import login_user
 
 
+
 class UserRegistration(TemplateView):
     template_name = 'register.html'
 
