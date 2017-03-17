@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from memory_trunk_app.forms import MemoryForm
+from memory_trunk_app import models
 
 def hippocampus_view(request):
     """
@@ -19,10 +20,21 @@ def hippocampus_view(request):
         form = MemoryForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
+            memory = models.Memory.objects.create(
+                user=request.user,
+                title=form.cleaned_data['title'],
+                is_public=form.cleaned_data['is_public'],
+                date=form.cleaned_data['date'],
+                location=form.cleaned_data['location'],
+                content=form.cleaned_data['content'],
+                happy_factor=form.cleaned_data['happy_factor'],
+                sad_factor=form.cleaned_data['sad_factor'],
+            )
+            print("*****mem: {}".format(memory))
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

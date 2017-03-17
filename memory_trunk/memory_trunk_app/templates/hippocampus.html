@@ -2,10 +2,24 @@
 
 {% block content %}
 
-<form action="/your-name/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+
+<form class="" action="{% url 'memory_trunk_app:hippocampus' %}" method="post">
+      {% csrf_token %}
+      {# <input type="text" class="form-control" name="title" value="" placeholder="Title"> #}
+      {# <input type="checkbox" class="form-control" name="is_public" value="true"> #}
+
+      {{form}}
+
+
+
+      {# <p>Date: <input type="text" id="datepicker"></p> #}
+
+
+
+
+      {# <input type="text" class="form-control" name="expiration_date" value="" placeholder="Enter Expiration Date"> #}
+      {# <input type="text" class="form-control" name="billing_name" value="" placeholder="Enter Name on Card"> #}
+      <button class="btn btn-danger" type="submit">Save Details</button>
+    </form>
 
 {% endblock %}
