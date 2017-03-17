@@ -1,2 +1,1 @@
-
-
+from .memory_form import MemoryForm

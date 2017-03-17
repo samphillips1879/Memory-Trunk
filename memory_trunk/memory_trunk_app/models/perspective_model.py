@@ -35,7 +35,7 @@ class Perspective(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
     title = models.CharField(max_length=100, default="")
-    is_public = models.IntegerField(default=1)
+    is_public = models.BooleanField()
     content = models.TextField(default="")
     likes = models.ManyToManyField(User, related_name="perspective_likes")
     memories = models.ManyToManyField(Memory)

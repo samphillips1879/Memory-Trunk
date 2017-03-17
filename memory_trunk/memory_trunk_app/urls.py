@@ -15,5 +15,8 @@ urlpatterns = [
     url(r'^logout_user', views.login_views.logout_user, name='logout_user'),
     url(r'^login', views.login_views.LoginUserView.as_view(), name='login_user_view'),
 
+    # Forms
+    url(r'^hippocampus', views.hippocampus_view, name='hippocampus'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
