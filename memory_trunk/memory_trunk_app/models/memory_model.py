@@ -33,7 +33,7 @@ class Memory(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    is_public = models.PositiveIntegerField()
+    is_public = models.BooleanField()
     date = models.DateField()
     location = models.CharField(max_length=100)
     content = models.TextField()
