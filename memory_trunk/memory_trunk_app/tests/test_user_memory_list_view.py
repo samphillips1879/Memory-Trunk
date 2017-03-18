@@ -1,9 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-@login_required
 class TestHippocampusView(TestCase):
     """
     Purpose:
