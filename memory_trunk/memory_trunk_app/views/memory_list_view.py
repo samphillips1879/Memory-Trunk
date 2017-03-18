@@ -14,7 +14,14 @@ class MemoryListView(TemplateView):
 
     def get(self, request, id):
         memories = models.Memory.objects.filter(user=id)
-        return render(request, self.template_name, {'memories': memories})
+        return render(
+            request, 
+            self.template_name, 
+            {
+                'memories': memories,
+                'page_title': 'My Memories'
+            }
+        )
 
 
 class PublicMemoryListView(TemplateView):
@@ -28,5 +35,11 @@ class PublicMemoryListView(TemplateView):
 
     def get(self, request):
         memories = models.Memory.objects.filter(is_public=True)
-        return render(request, self.template_name, {'memories': memories})
-
+        return render(
+            request, 
+            self.template_name, 
+            {
+                'memories': memories,
+                'page_title': 'Community Memories'
+            }
+        )
