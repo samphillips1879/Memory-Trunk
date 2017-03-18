@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {# Tip object display container #}
+    <div class="container">
+        <h2>{{tip.title}}</h2>
+        <h4>by {{tip.user.username}}</h4>
+        {% if tip.do %}
+            <h6>DO</h6>
+        {% else %}
+            <h6>DON'T</h6>
+        {% endif %}
+        
+        <p>{{tip.content}}</p>
+
+
+    </div>
+{% endblock %}
