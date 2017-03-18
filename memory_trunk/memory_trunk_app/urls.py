@@ -21,6 +21,7 @@ urlpatterns = [
 
     # List Views
     url(r'^memory_list/(?P<id>\d+)/$', login_required(views.MemoryListView.as_view()), name='memory_list'),
+    url(r'^community_memories/', views.PublicMemoryListView.as_view(), name='public_memory_list'),
 
     # Detail Views
     url(r'^memory_detail/(?P<id>\d+)/$', views.MemoryDetailView.as_view(), name='memory_detail'),

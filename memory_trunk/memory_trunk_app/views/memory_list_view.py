@@ -14,6 +14,19 @@ class MemoryListView(TemplateView):
 
     def get(self, request, id):
         memories = models.Memory.objects.filter(user=id)
-
-
         return render(request, self.template_name, {'memories': memories})
+
+
+class PublicMemoryListView(TemplateView):
+    """
+    Purpose: 
+        List all public memories as hyperlinked titles
+    
+    Author: Sam Phillips <samcphillips.com>
+    """
+    template_name = 'memory_list.html'
+
+    def get(self, request):
+        memories = models.Memory.objects.filter(is_public=True)
+        return render(request, self.template_name, {'memories': memories})
+
