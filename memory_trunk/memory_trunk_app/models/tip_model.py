@@ -35,12 +35,15 @@ class Tip(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
     title = models.CharField(max_length=100, default="")
-    do = models.IntegerField(default=1)
+    do = models.BooleanField(default=1)
     is_public = models.BooleanField(default=1)
     content = models.TextField(default="")
     tags = TaggableManager()
     memories = models.ManyToManyField(Memory)
     likes = models.ManyToManyField(User, related_name="tip_likes")
+
+    def __str__(self):
+        return self.title
 
     def add_tags(self, tags):
         """

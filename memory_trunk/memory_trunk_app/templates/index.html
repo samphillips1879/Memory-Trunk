@@ -32,6 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/hippocampus">New Memory</a>
+                        <a class="dropdown-item" href="/tip_creation">New Tip</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -40,6 +41,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/memory_list/{{request.user.id}}">Memories</a>
+                        <a class="dropdown-item" href="/tip_list/{{request.user.id}}">Tips</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -49,6 +51,8 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{% url 'memory_trunk_app:public_memory_list' %}
                         ">Memories</a>
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_tip_list' %}
+                        ">Tips</a>
                     </div>
                 </li>
             </ul>
