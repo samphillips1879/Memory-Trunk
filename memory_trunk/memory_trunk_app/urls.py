@@ -18,5 +18,12 @@ urlpatterns = [
     # Forms
     url(r'^hippocampus', views.hippocampus_view, name='hippocampus'),
 
+    # List Views
+    url(r'^memory_list/(?P<id>\d+)/$', views.MemoryListView.as_view(), name='memory_list'),
+
+    # Detail Views
+    url(r'^memory_detail/(?P<id>\d+)/$', views.MemoryDetailView.as_view(), name='memory_detail'),
+
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

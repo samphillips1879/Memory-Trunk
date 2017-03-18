@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 class TestHippocampusView(TestCase):
     """
     Purpose:
-        Tests the rendering of the memory creation form view
+        Tests the processing of the memory creation view
 
     Methods:
-        test_hippocampus_is_rendered_properly
+        test_hippocampus_redirects_unauthenticated_users
 
     Author: Sam Phillips <samcphillips.com>
     """

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        {% for memory in memories %}
+            <a href="{% url 'memory_trunk_app:memory_detail' id=memory.id %}
+            ">
+                <h2>{{memory.title}}</h2>
+            </a>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
+
