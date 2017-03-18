@@ -14,7 +14,7 @@ class MemoryForm(ModelForm):
 
     class Meta:
         model = models.Memory
-        fields = ['title', 'is_public', 'date', 'location', 'content', 'happy_factor', 'sad_factor', 'tags',]
+        fields = ['title', 'is_public', 'date', 'location', 'content', 'happy_factor', 'sad_factor',]
         labels = {
             'is_public': _('Share this memory with other users?'),
             'date': _('Date (yyyy-mm-dd)'),

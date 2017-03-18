@@ -33,7 +33,7 @@ class Tip(models.Model):
     Author: Sam Phillips <samcphillips.com>
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
     title = models.CharField(max_length=100, default="")
     do = models.IntegerField(default=1)
     is_public = models.BooleanField(default=1)
