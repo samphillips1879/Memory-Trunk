@@ -4,7 +4,8 @@
 <head>
     <title>MemoryTrunk</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
 
@@ -25,6 +26,31 @@
         
             <!-- Menu Left Justified -->
             <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create <span class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/hippocampus">New Memory</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Trunk <span class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/memory_list/{{request.user.id}}">Memories</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Community Trunk <span class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_memory_list' %}
+                        ">Memories</a>
+                    </div>
+                </li>
             </ul>
 
             <!-- Menu Right Justified -->
@@ -58,5 +84,8 @@
         <h1>Welcome to MemoryTrunk</h1>
     </div>
 {% endblock %}
+
+<script src="{% static 'lib/jquery.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap.min.js' %}"></script>
 </body>
 </html>

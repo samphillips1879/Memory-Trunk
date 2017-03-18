@@ -31,9 +31,9 @@ class Memory(models.Model):
         Author: Sam Phillips <samcphillips.com>
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    is_public = models.PositiveIntegerField()
+    is_public = models.BooleanField()
     date = models.DateField()
     location = models.CharField(max_length=100)
     content = models.TextField()
