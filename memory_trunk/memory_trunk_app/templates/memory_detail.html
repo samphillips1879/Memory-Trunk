@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {# Memory object display container #}
+    <div class="container">
+        <h2>{{memory.title}}</h2>
+        <h6>{{memory.date}} - {{memory.location}}</h6>
+        <p>{{memory.content}}</p>
+
+
+    </div>
+{% endblock %}
