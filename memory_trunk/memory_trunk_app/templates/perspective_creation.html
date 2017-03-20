@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block content %}
+    <form class="" action="{% url 'memory_trunk_app:perspective_creation' %}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-success" type="submit">Save Perspective</button>
+    </form>
+{% endblock %}

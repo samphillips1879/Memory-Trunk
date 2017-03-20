@@ -33,6 +33,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/hippocampus">New Memory</a>
                         <a class="dropdown-item" href="/tip_creation">New Tip</a>
+                        <a class="dropdown-item" href="/perspective_creation">New Perspective</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -42,6 +43,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/memory_list/{{request.user.id}}">Memories</a>
                         <a class="dropdown-item" href="/tip_list/{{request.user.id}}">Tips</a>
+                        <a class="dropdown-item" href="/perspective_list/{{request.user.id}}">Perspectives</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -53,6 +55,8 @@
                         ">Memories</a>
                         <a class="dropdown-item" href="{% url 'memory_trunk_app:public_tip_list' %}
                         ">Tips</a>
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_perspective_list' %}
+                        ">Perspectives</a>
                     </div>
                 </li>
             </ul>
@@ -69,6 +73,19 @@
         {% else %}
           <!-- Menu Left Justified -->
             <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Community Trunk <span class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_memory_list' %}
+                        ">Memories</a>
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_tip_list' %}
+                        ">Tips</a>
+                        <a class="dropdown-item" href="{% url 'memory_trunk_app:public_perspective_list' %}
+                        ">Perspectives</a>
+                    </div>
+                </li>
             </ul>
 
           <!-- Menu Right Justified -->

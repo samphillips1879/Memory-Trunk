@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {# Perspective object display container #}
+    <div class="container">
+        <h2>{{perspective.title}}</h2>
+        <h4>by {{perspective.user.username}}</h4>
+        <p>{{perspective.content}}</p>
+    </div>
+{% endblock %}

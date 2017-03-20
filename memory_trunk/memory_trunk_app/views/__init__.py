@@ -15,3 +15,8 @@ from .memory_detail_view import MemoryDetailView
 from .tip_creation_view import tip_creation_view
 from .tip_list_view import TipListView, PublicTipListView
 from .tip_detail_view import TipDetailView
+
+# Perspective views
+from .perspective_creation_view import perspective_creation_view
+from .perspective_list_view import PerspectiveListView, PublicPerspectiveListView
+from .perspective_detail_view import PerspectiveDetailView
