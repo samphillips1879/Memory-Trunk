@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{page_title}}</h1>
+        {% for perspective in perspectives %}
+            <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}
+            ">
+                <h2>
+                    {{perspective.title}} 
+                    {% if page_title == 'Community Perspectives' %}
+                        - {{perspective.user.username}}
+                    {% endif %}
+                </h2>
+            </a>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
+
