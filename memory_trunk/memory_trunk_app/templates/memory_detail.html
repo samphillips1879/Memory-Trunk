@@ -8,6 +8,12 @@
         <h6>{{memory.date}} - {{memory.location}}</h6>
         <p>{{memory.content}}</p>
 
+        {% if request.user.id == memory.user.id %}
+            <a href="{% url 'memory_trunk_app:delete_memory' id=memory.id %}">
+                <button class="btn btn-danger">Delete</button>
+            </a>
+        {% endif %}
+
 
     </div>
 {% endblock %}

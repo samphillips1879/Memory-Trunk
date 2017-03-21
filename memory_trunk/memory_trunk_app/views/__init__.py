@@ -10,13 +10,16 @@ from .login_views import login_user, logout_user, LoginUserView
 from .hippocampus_view import hippocampus_view
 from .memory_list_view import MemoryListView, PublicMemoryListView
 from .memory_detail_view import MemoryDetailView
+from .delete_memory_view import delete_memory
 
 # Tip views
 from .tip_creation_view import tip_creation_view
 from .tip_list_view import TipListView, PublicTipListView
 from .tip_detail_view import TipDetailView
+from .delete_tip_view import delete_tip
 
 # Perspective views
 from .perspective_creation_view import perspective_creation_view
 from .perspective_list_view import PerspectiveListView, PublicPerspectiveListView
 from .perspective_detail_view import PerspectiveDetailView
+from .delete_perspective_view import delete_perspective
