@@ -18,12 +18,15 @@ def perspective_creation_view(request):
         # create a form instance and populate it with data from the request:
         form = PerspectiveForm(request.POST)
         if form.is_valid():
-            tip = models.Perspective.objects.create(
+            perspective = models.Perspective.objects.create(
                 user=request.user,
                 title=form.cleaned_data['title'],
                 is_public=form.cleaned_data['is_public'],
                 content=form.cleaned_data['content'],
             )
+            for tag in form.cleaned_data['tags']:
+                perspective.tags.add(tag)
+            perspective.save()
             return HttpResponseRedirect('/')
 
     # if a GET (or any other method) create a blank form

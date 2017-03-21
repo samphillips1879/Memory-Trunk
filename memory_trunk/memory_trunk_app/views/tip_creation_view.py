@@ -25,6 +25,9 @@ def tip_creation_view(request):
                 is_public=form.cleaned_data['is_public'],
                 content=form.cleaned_data['content'],
             )
+            for tag in form.cleaned_data['tags']:
+                tip.tags.add(tag)
+            tip.save()
             return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

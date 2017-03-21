@@ -21,6 +21,8 @@ def update_tip(request, id):
                 tip.do=form.cleaned_data['do']
                 tip.is_public=form.cleaned_data['is_public']
                 tip.content=form.cleaned_data['content']
+                for tag in form.cleaned_data['tags']:
+                    tip.tags.add(tag)
                 tip.save()
                 return HttpResponseRedirect('/')
         return HttpResponseRedirect('/')

@@ -26,8 +26,12 @@ def hippocampus_view(request):
                 location=form.cleaned_data['location'],
                 content=form.cleaned_data['content'],
                 happy_factor=form.cleaned_data['happy_factor'],
-                sad_factor=form.cleaned_data['sad_factor'],
+                sad_factor=form.cleaned_data['sad_factor']
             )
+            for tag in form.cleaned_data['tags']:
+                memory.tags.add(tag)
+            memory.save()
+
             return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

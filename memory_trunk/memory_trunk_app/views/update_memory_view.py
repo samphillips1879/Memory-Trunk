@@ -24,6 +24,8 @@ def update_memory(request, id):
                 memory.content=form.cleaned_data['content']
                 memory.happy_factor=form.cleaned_data['happy_factor']
                 memory.sad_factor=form.cleaned_data['sad_factor']
+                for tag in form.cleaned_data['tags']:
+                    memory.tags.add(tag)
                 memory.save()
                 return HttpResponseRedirect('/')
         return HttpResponseRedirect('/')

@@ -12,7 +12,7 @@ class PerspectiveForm(ModelForm):
 
     class Meta:
         model = models.Perspective
-        fields = ['title', 'is_public', 'content',]
+        fields = ['title', 'is_public', 'content', 'tags',]
         labels = {
             'is_public': _('Share this Perspective with other users?'),
         }
