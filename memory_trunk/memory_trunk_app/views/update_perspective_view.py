@@ -20,6 +20,8 @@ def update_perspective(request, id):
                 perspective.title=form.cleaned_data['title']
                 perspective.is_public=form.cleaned_data['is_public']
                 perspective.content=form.cleaned_data['content']
+                for tag in form.cleaned_data['tags']:
+                    perspective.tags.add(tag)
                 perspective.save()
                 return HttpResponseRedirect('/')
         return HttpResponseRedirect('/')
