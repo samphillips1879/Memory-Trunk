@@ -13,6 +13,16 @@
         
         <p>{{tip.content}}</p>
 
+        {% if request.user in tip.likes.all %}
+            <a href="{% url 'memory_trunk_app:dislike_tip' id=tip.id %}">
+                <button class="btn btn-danger">Dislike</button>
+            </a>
+        {% else %}
+            <a href="{% url 'memory_trunk_app:like_tip' id=tip.id %}">
+                <button class="btn btn-success">Like</button>
+            </a>
+        {% endif %}
+
         {% if request.user.id == tip.user.id %}
             <a href="{% url 'memory_trunk_app:delete_tip' id=tip.id %}">
                 <button class="btn btn-danger">Delete</button>

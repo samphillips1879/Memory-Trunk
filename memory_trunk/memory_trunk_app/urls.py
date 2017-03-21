@@ -83,4 +83,19 @@ urlpatterns = [
         # Perspective
     url(r'^update_perspective/(?P<id>\d+)/$', views.update_perspective, name='update_perspective'),
 
+
+    # LIKES AND FOLLOWS PROCESSING
+
+        # Memory
+    url(r'^like_memory/(?P<id>\d+)/$', views.like_memory, name='like_memory'),
+    url(r'^dislike_memory/(?P<id>\d+)/$', views.dislike_memory, name='dislike_memory'),
+
+        # Tip
+    url(r'^like_tip/(?P<id>\d+)/$', views.like_tip, name='like_tip'),
+    url(r'^dislike_tip/(?P<id>\d+)/$', views.dislike_tip, name='dislike_tip'),
+
+        # Memory
+    url(r'^like_perspective/(?P<id>\d+)/$', views.like_perspective, name='like_perspective'),
+    url(r'^dislike_perspective/(?P<id>\d+)/$', views.dislike_perspective, name='dislike_perspective'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
