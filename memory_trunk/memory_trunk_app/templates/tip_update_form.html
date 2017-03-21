@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <form action="{% url 'memory_trunk_app:update_memory' id=memory.id %}" method="post">
+    <form action="{% url 'memory_trunk_app:update_tip' id=tip.id %}" method="post">
         {% csrf_token %}
         {{ form }}
         <input class="btn btn-success" type="submit" value="Update" />

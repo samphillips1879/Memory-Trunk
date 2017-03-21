@@ -77,6 +77,11 @@ urlpatterns = [
         # Memory
     url(r'^update_memory/(?P<id>\d+)/$', views.update_memory, name='update_memory'),
 
+        # Tip
+    url(r'^update_tip/(?P<id>\d+)/$', views.update_tip, name='update_tip'),
+
+        # Perspective
+    url(r'^update_perspective/(?P<id>\d+)/$', views.update_perspective, name='update_perspective'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -11,6 +11,9 @@
             <a href="{% url 'memory_trunk_app:delete_perspective' id=perspective.id %}">
                 <button class="btn btn-danger">Delete</button>
             </a>
+            <a href="{% url 'memory_trunk_app:update_perspective' id=perspective.id %}">
+                <button class="btn btn-info">Edit</button>
+            </a>
         {% endif %}
 
     </div>
