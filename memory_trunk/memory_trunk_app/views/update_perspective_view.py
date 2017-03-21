@@ -13,14 +13,16 @@ def update_perspective(request, id):
     """
     perspective = models.Perspective.objects.get(id=id)
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = PerspectiveForm(request.POST)
-        if form.is_valid():
-            perspective.title=form.cleaned_data['title']
-            perspective.is_public=form.cleaned_data['is_public']
-            perspective.content=form.cleaned_data['content']
-            perspective.save()
-            return HttpResponseRedirect('/')
+        if perspective.user == request.user:
+            # create a form instance and populate it with data from the request:
+            form = PerspectiveForm(request.POST)
+            if form.is_valid():
+                perspective.title=form.cleaned_data['title']
+                perspective.is_public=form.cleaned_data['is_public']
+                perspective.content=form.cleaned_data['content']
+                perspective.save()
+                return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

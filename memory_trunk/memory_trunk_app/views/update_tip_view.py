@@ -13,15 +13,17 @@ def update_tip(request, id):
     """
     tip = models.Tip.objects.get(id=id)
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = TipForm(request.POST)
-        if form.is_valid():
-            tip.title=form.cleaned_data['title']
-            tip.do=form.cleaned_data['do']
-            tip.is_public=form.cleaned_data['is_public']
-            tip.content=form.cleaned_data['content']
-            tip.save()
-            return HttpResponseRedirect('/')
+        if tip.user == request.user:
+            # create a form instance and populate it with data from the request:
+            form = TipForm(request.POST)
+            if form.is_valid():
+                tip.title=form.cleaned_data['title']
+                tip.do=form.cleaned_data['do']
+                tip.is_public=form.cleaned_data['is_public']
+                tip.content=form.cleaned_data['content']
+                tip.save()
+                return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

@@ -13,19 +13,21 @@ def update_memory(request, id):
     """
     memory = models.Memory.objects.get(id=id)
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = MemoryForm(request.POST)
-        if form.is_valid():
-            memory.title=form.cleaned_data['title']
-            memory.is_public=form.cleaned_data['is_public']
-            memory.date=form.cleaned_data['date']
-            memory.location=form.cleaned_data['location']
-            memory.content=form.cleaned_data['content']
-            memory.happy_factor=form.cleaned_data['happy_factor']
-            memory.sad_factor=form.cleaned_data['sad_factor']
-            memory.save()
-            return HttpResponseRedirect('/')
-
+        if memory.user == request.user:
+            # create a form instance and populate it with data from the request:
+            form = MemoryForm(request.POST)
+            if form.is_valid():
+                memory.title=form.cleaned_data['title']
+                memory.is_public=form.cleaned_data['is_public']
+                memory.date=form.cleaned_data['date']
+                memory.location=form.cleaned_data['location']
+                memory.content=form.cleaned_data['content']
+                memory.happy_factor=form.cleaned_data['happy_factor']
+                memory.sad_factor=form.cleaned_data['sad_factor']
+                memory.save()
+                return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
+        
     # if a GET (or any other method) we'll create a blank form
     else:
         form = MemoryForm(instance=memory)
