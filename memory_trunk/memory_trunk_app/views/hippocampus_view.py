@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from memory_trunk_app.forms import MemoryForm
 from memory_trunk_app import models
 
@@ -32,7 +33,7 @@ def hippocampus_view(request):
                 memory.tags.add(tag)
             memory.save()
 
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('memory_trunk_app:memory_detail', args=(memory.id,)))
 
     # if a GET (or any other method) we'll create a blank form
     else:

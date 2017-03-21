@@ -2,6 +2,7 @@ from django.views.generic.base import TemplateView
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from memory_trunk_app import models
 
 class TipDetailView(TemplateView):
@@ -34,7 +35,7 @@ def like_tip(request, id):
     """
     tip = models.Tip.objects.get(id=id)
     tip.likes.add(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:tip_detail', args=(tip.id,)))
 
 
 def dislike_tip(request, id):
@@ -51,4 +52,4 @@ def dislike_tip(request, id):
     """
     tip = models.Tip.objects.get(id=id)
     tip.likes.remove(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:tip_detail', args=(tip.id,)))
