@@ -6,5 +6,15 @@
         <h2>{{perspective.title}}</h2>
         <h4>by {{perspective.user.username}}</h4>
         <p>{{perspective.content}}</p>
+
+        {% if request.user.id == perspective.user.id %}
+            <a href="{% url 'memory_trunk_app:delete_perspective' id=perspective.id %}">
+                <button class="btn btn-danger">Delete</button>
+            </a>
+            <a href="{% url 'memory_trunk_app:update_perspective' id=perspective.id %}">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        {% endif %}
+
     </div>
 {% endblock %}

@@ -19,7 +19,7 @@ class PerspectiveListView(TemplateView):
             self.template_name, 
             {
                 'perspectives': perspectives,
-                'page_title': 'Community Perspectives'
+                'page_title': 'My Perspectives'
             }
         )
 

@@ -60,5 +60,41 @@ urlpatterns = [
     url(r'^perspective_detail/(?P<id>\d+)/$', views.PerspectiveDetailView.as_view(), name='perspective_detail'),
 
 
+    # OBJECT DELETION VIEWS
+
+        # Memory
+    url(r'^delete_memory/(?P<id>\d+)/$', views.delete_memory, name='delete_memory'),
+    
+        # Tip
+    url(r'^delete_tip/(?P<id>\d+)/$', views.delete_tip, name='delete_tip'),
+    
+        # Perspective
+    url(r'^delete_perspective/(?P<id>\d+)/$', views.delete_perspective, name='delete_perspective'),
+
+
+    # UPDATE VIEWS
+
+        # Memory
+    url(r'^update_memory/(?P<id>\d+)/$', views.update_memory, name='update_memory'),
+
+        # Tip
+    url(r'^update_tip/(?P<id>\d+)/$', views.update_tip, name='update_tip'),
+
+        # Perspective
+    url(r'^update_perspective/(?P<id>\d+)/$', views.update_perspective, name='update_perspective'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
+
+
+
+
+
+
+
+
+
+
 

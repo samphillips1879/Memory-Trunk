@@ -13,6 +13,17 @@
         
         <p>{{tip.content}}</p>
 
+        {% if request.user.id == tip.user.id %}
+            <a href="{% url 'memory_trunk_app:delete_tip' id=tip.id %}">
+                <button class="btn btn-danger">Delete</button>
+            </a>
+            <a href="{% url 'memory_trunk_app:update_tip' id=tip.id %}">
+                <button class="btn btn-info">Edit</button>
+            </a>
+        {% endif %}
+        
+        
+
 
     </div>
 {% endblock %}
