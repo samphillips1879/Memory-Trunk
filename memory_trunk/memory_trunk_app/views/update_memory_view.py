@@ -1,6 +1,7 @@
 from memory_trunk_app import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from memory_trunk_app.forms import MemoryForm
 
 def update_memory(request, id):
@@ -27,7 +28,7 @@ def update_memory(request, id):
                 for tag in form.cleaned_data['tags']:
                     memory.tags.add(tag)
                 memory.save()
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect(reverse('memory_trunk_app:memory_detail', args=(memory.id,)))
         return HttpResponseRedirect('/')
         
     # if a GET (or any other method) we'll create a blank form

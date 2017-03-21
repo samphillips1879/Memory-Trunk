@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from memory_trunk_app import models
 
@@ -34,7 +35,7 @@ def like_perspective(request, id):
     """
     perspective = models.Perspective.objects.get(id=id)
     perspective.likes.add(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:perspective_detail', args=(perspective.id,)))
 
 
 def dislike_perspective(request, id):
@@ -50,4 +51,4 @@ def dislike_perspective(request, id):
     """
     perspective = models.Perspective.objects.get(id=id)
     perspective.likes.remove(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:perspective_detail', args=(perspective.id,)))

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from memory_trunk_app import models
+from django.urls import reverse
 
 class MemoryDetailView(TemplateView):
     """
@@ -34,7 +35,7 @@ def like_memory(request, id):
     """
     memory = models.Memory.objects.get(id=id)
     memory.likes.add(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:memory_detail', args=(memory.id,)))
 
 
 def dislike_memory(request, id):
@@ -51,4 +52,4 @@ def dislike_memory(request, id):
     """
     memory = models.Memory.objects.get(id=id)
     memory.likes.remove(request.user)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(reverse('memory_trunk_app:memory_detail', args=(memory.id,)))
