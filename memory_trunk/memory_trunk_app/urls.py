@@ -84,17 +84,3 @@ urlpatterns = [
     url(r'^update_perspective/(?P<id>\d+)/$', views.update_perspective, name='update_perspective'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
