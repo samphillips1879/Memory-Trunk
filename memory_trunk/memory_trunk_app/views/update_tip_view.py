@@ -1,6 +1,7 @@
 from memory_trunk_app import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from memory_trunk_app.forms import TipForm
 
 def update_tip(request, id):
@@ -24,7 +25,7 @@ def update_tip(request, id):
                 for tag in form.cleaned_data['tags']:
                     tip.tags.add(tag)
                 tip.save()
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect(reverse('memory_trunk_app:tip_detail', args=(tip.id,)))
         return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

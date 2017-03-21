@@ -1,6 +1,7 @@
 from memory_trunk_app import models
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from memory_trunk_app.forms import PerspectiveForm
 
 def update_perspective(request, id):
@@ -23,7 +24,7 @@ def update_perspective(request, id):
                 for tag in form.cleaned_data['tags']:
                     perspective.tags.add(tag)
                 perspective.save()
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect(reverse('memory_trunk_app:perspective_detail', args=(perspective.id,)))
         return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

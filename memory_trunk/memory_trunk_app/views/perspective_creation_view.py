@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from memory_trunk_app.forms import PerspectiveForm
 from memory_trunk_app import models
 
@@ -27,7 +28,7 @@ def perspective_creation_view(request):
             for tag in form.cleaned_data['tags']:
                 perspective.tags.add(tag)
             perspective.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('memory_trunk_app:perspective_detail', args=(perspective.id,)))
 
     # if a GET (or any other method) create a blank form
     else:

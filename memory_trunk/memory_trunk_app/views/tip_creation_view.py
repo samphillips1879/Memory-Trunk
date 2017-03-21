@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from memory_trunk_app.forms import TipForm
 from memory_trunk_app import models
 
@@ -28,7 +29,7 @@ def tip_creation_view(request):
             for tag in form.cleaned_data['tags']:
                 tip.tags.add(tag)
             tip.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('memory_trunk_app:tip_detail', args=(tip.id,)))
 
     # if a GET (or any other method) we'll create a blank form
     else:
