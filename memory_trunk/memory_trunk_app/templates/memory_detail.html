@@ -12,8 +12,9 @@
             <a href="{% url 'memory_trunk_app:delete_memory' id=memory.id %}">
                 <button class="btn btn-danger">Delete</button>
             </a>
+            <a href="{% url 'memory_trunk_app:update_memory' id=memory.id %}">
+                <button class="btn btn-info">Edit</button>
+            </a>
         {% endif %}
-
-
     </div>
 {% endblock %}

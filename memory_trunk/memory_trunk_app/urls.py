@@ -72,6 +72,12 @@ urlpatterns = [
     url(r'^delete_perspective/(?P<id>\d+)/$', views.delete_perspective, name='delete_perspective'),
 
 
+    # UPDATE VIEWS
+
+        # Memory
+    url(r'^update_memory/(?P<id>\d+)/$', views.update_memory, name='update_memory'),
+
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -11,6 +11,7 @@ from .hippocampus_view import hippocampus_view
 from .memory_list_view import MemoryListView, PublicMemoryListView
 from .memory_detail_view import MemoryDetailView
 from .delete_memory_view import delete_memory
+from .update_memory_view import update_memory
 
 # Tip views
 from .tip_creation_view import tip_creation_view

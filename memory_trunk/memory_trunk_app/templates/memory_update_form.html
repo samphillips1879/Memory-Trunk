@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <form action="{% url 'memory_trunk_app:update_memory' id=memory.id %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Update" />
+    </form>
+{% endblock %}
