@@ -2,3 +2,51 @@
     margin: 1rem;
     display: block;
 }
+
+.dropdown-toggle::before {
+    content: "|\00a0\00a0\00a0";
+}
+
+.drowpdown-toggle {
+    text-indent: 10rem;
+}
+
+.nav>li>a {
+    padding-left: 0;
+}
+
+.glyphicon-triangle-bottom {
+    font-size: 65%;
+}
+
+#index_content_holder {
+    width: 90%;
+/*    border-left: 1px solid gray;
+    border-right: 1px solid gray;*/
+    height: 90vh;
+}
+
+.content-block {
+    height: 80vh;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;   
+    overflow: scroll;
+}
+
+.content-block>.content-title {
+    text-align: center;
+    border-bottom: 1px solid gray;   
+}
+
+#index_community_blocks {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
