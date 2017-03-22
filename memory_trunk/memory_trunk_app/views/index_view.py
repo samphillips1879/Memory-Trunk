@@ -15,5 +15,8 @@ class IndexView(TemplateView):
 
     def get(self, request):
         self.context['memories'] = models.Memory.objects.filter(is_public=True).order_by('-id')[:10][::-1]
+        self.context['tips'] = models.Tip.objects.filter(is_public=True).order_by('-id')[:10][::-1]
+        self.context['perspectives'] = models.Perspective.objects.filter(is_public=True).order_by('-id')[:10][::-1]
+
 
         return render(request, self.template_name, self.context)

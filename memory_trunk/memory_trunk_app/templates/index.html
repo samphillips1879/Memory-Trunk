@@ -130,14 +130,24 @@
                         </a>
                         <h5>by {{mem.user.username}}</h5>
                     {% endfor %}
-                    
-                    
                 </div>
                 <div class="content-block col-md-4">
                     <h2 class="content-title">Community Tips</h2>
+                    {% for tip in tips %}
+                        <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
+                            <h3>{{tip.title}}</h3>
+                        </a>
+                        <h5>by {{tip.user.username}}</h5>
+                    {% endfor %}
                 </div>
                 <div class="content-block col-md-4 last_cb">
                     <h2 class="content-title">Community Perspectives</h2>
+                    {% for perspective in perspectives %}
+                        <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
+                            <h3>{{perspective.title}}</h3>
+                        </a>
+                        <h5>by {{perspective.user.username}}</h5>
+                    {% endfor %}
                 </div>
                 
             </div>
