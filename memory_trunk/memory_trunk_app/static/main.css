@@ -62,3 +62,15 @@ h1 {
     border: 1px solid gray;
     padding: 2rem;
 }
+
+/*.object-maker>textarea {
+    display: block;
+}*/
+
+#object_content {
+    display: block;
+}
+
+label {
+    top: 0;
+}
