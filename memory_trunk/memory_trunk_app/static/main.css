@@ -18,3 +18,32 @@
 .glyphicon-triangle-bottom {
     font-size: 65%;
 }
+
+#index_content_holder {
+    width: 90%;
+/*    border-left: 1px solid gray;
+    border-right: 1px solid gray;*/
+    height: 90vh;
+}
+
+.content-block {
+    height: 80vh;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;   
+    overflow: scroll;
+}
+
+.last_cb {
+    border-right: 1px solid gray;
+}
+
+.content-block>h4 {
+    text-align: center;
+    border-bottom: 1px solid gray;   
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
