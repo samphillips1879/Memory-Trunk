@@ -5,7 +5,15 @@
         <div class="row">
             <div class="content-block col-md-10 col-md-offset-1 container-fluid">
                 <div class="row shadowed">
-                    <h2 class="content-title">{{page_title}}</h2>
+                    <h2 class="content-title col-sm-6">{{page_title}}</h2>
+                    <div class="input-group col-sm-5 search-bar">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default glyphicon glyphicon-search" type="button">
+                                {# <span class="glyphicon glyphicon-search"></span> #}
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
                 </div>
                 <div class="row list-container">
                     {% for tip in tips %}
