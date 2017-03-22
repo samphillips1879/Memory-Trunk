@@ -29,17 +29,20 @@
 .content-block {
     height: 80vh;
     border-left: 1px solid gray;
+    border-right: 1px solid gray;
     border-bottom: 1px solid gray;   
     overflow: scroll;
 }
 
-.last_cb {
-    border-right: 1px solid gray;
-}
-
-.content-block>h4 {
+.content-block>.content-title {
     text-align: center;
     border-bottom: 1px solid gray;   
+}
+
+#index_community_blocks {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 h1 {

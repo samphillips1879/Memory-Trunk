@@ -123,13 +123,21 @@
             {# Body containing blocks for last ten Memory, Tip, and Perspective objects #}
             <div id="index_community_blocks" class="row">
                 <div class="content-block col-md-4">
-                    <h4>Community Memories</h4>
+                    <h2 class="content-title">Community Memories</h2>
+                    {% for mem in memories %}
+                        <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
+                            <h3>{{mem.title}}</h3>
+                        </a>
+                        <h5>by {{mem.user.username}}</h5>
+                    {% endfor %}
+                    
+                    
                 </div>
                 <div class="content-block col-md-4">
-                    <h4>Community Tips</h4>
+                    <h2 class="content-title">Community Tips</h2>
                 </div>
                 <div class="content-block col-md-4 last_cb">
-                    <h4>Community Perspectives</h4>
+                    <h2 class="content-title">Community Perspectives</h2>
                 </div>
                 
             </div>
