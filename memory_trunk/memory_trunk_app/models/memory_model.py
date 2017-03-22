@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Memory(models.Model):
     """
@@ -37,8 +38,18 @@ class Memory(models.Model):
     date = models.DateField()
     location = models.CharField(max_length=100)
     content = models.TextField()
-    happy_factor = models.PositiveIntegerField()
-    sad_factor = models.PositiveIntegerField()
+    happy_factor = models.IntegerField(
+        validators=[
+            MaxValueValidator(10),
+            MinValueValidator(0)
+        ]
+    )
+    sad_factor = models.IntegerField(
+        validators=[
+            MaxValueValidator(10),
+            MinValueValidator(0)
+        ]
+    )
     tags = TaggableManager()
     likes = models.ManyToManyField(User, related_name="memory_likes")
 
