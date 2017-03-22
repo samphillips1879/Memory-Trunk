@@ -110,23 +110,26 @@
         </div><!-- /.container-fluid -->
     </nav>
 {# navbar end #}
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="positive-title">MemoryTrunk</h1>
+                <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
+            </div>
+        </div>
+    </div>
     <div id="index_content_holder" class="container-fluid">
         {% block content %}
             {# Header #}
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="positive-title">MemoryTrunk</h1>
-                    <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
-                </div>
-            </div>
 
             {# Body containing blocks for last ten Memory, Tip, and Perspective objects #}
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 container-fluid">
                     <div id="index_community_blocks" class="row">
-                        <div class="content-block col-md-4">
-                            <h2 class="content-title">Memories</h2>
+                        <div class="content-block index-block col-sm-4">
+                            
+                                <h2 class="content-title"><a href="{% url 'memory_trunk_app:public_memory_list' %}">Memories</a></h2>
+                            
                             {% for mem in memories %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
@@ -136,8 +139,8 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        <div class="content-block col-md-4">
-                            <h2 class="content-title">Tips</h2>
+                        <div class="content-block index-block col-sm-4">
+                            <h2 class="content-title"><a href="{% url 'memory_trunk_app:public_tip_list' %}">Tips</a></h2>
                             {% for tip in tips %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
@@ -147,8 +150,8 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        <div class="content-block col-md-4 last_cb">
-                            <h2 class="content-title">Perspectives</h2>
+                        <div class="content-block index-block col-sm-4 last_cb">
+                            <h2 class="content-title"><a href="{% url 'memory_trunk_app:public_perspective_list' %}">Perspectives</a></h2>
                             {% for perspective in perspectives %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">

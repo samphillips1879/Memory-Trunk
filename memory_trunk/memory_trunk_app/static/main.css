@@ -38,31 +38,32 @@ body {
     height: 90vh;
 }
 
-.content-block {
-    height: 70vh;
-    border: 1px solid #9AACB8;  
-    overflow: scroll;
-}
+/*.content-block>*/
 
-.content-block>.content-title {
-    text-align: center;
-    border-bottom: 1px solid #9AACB8;
-    color: black;
-    font-weight: 200;
-}
 
 #index_community_blocks {
     border-left: 1px solid #9AACB8;
     border-right: 1px solid #9AACB8;
     border-bottom: 1px solid #9AACB8;
     background-color: #ADE1FF;
+    /*box-shadow: 0 0 30px #888888;*/
+    margin-top: 2rem;
 }
 
 .content-block {
-    border-left: 1px solid #9AACB8;
+    /*border-left: 1px solid #9AACB8;
     border-right: 1px solid #9AACB8;
-    border-bottom: 1px solid #9AACB8;
+    border-bottom: 1px solid #9AACB8;*/
+    height: 70vh;
+    border: 1px solid #9AACB8;  
+    overflow: scroll;
     background-color: #ADE1FF;
+    margin-top: 3rem;
+    box-shadow: 0 0 30px #888888;
+}
+
+.index-block {
+    margin-top: 0;
 }
 
 h1 {
@@ -104,11 +105,13 @@ h1 {
 }
 
 .listed-object {
-    border: 1px solid #5591B2;
+    border: 2px solid #5591B2;
     padding-left: 1rem;
     margin: 1rem;
     background-color: rgba(96,65,43, 0.3);
     overflow: scroll;
+    height: 15rem;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .listed-object>h5 {
@@ -116,15 +119,7 @@ h1 {
 }
 
 .listed-with-brethren {
-    border: 1px solid #5591B2;
-    height: 10rem;
-    padding-left: 1rem;
-    background-color: #9AACB8;
-    /*background-color: rgba(178,146,103, 0.4);*/
-    overflow: scroll;
-    /*width: 20%;*/
-    /*display: inline-block;*/
-    /*margin: 1%;*/
+    margin-left: 5.5%;
 }
 
 .bordered {
@@ -135,4 +130,10 @@ h1 {
 
 label {
     top: 0;
+}
+.content-title {
+    text-align: center;
+    border-bottom: 1px solid #9AACB8;
+    color: black;
+    font-weight: 200;
 }

@@ -5,9 +5,9 @@
         <div class="row">
             <div class="content-block col-md-10 col-md-offset-1 container-fluid">
                 <h2 class="content-title">{{page_title}}</h2>
-                <div class="row center-text">
+                <div class="row">
                     {% for tip in tips %}
-                        <div class="listed-with-brethren col-sm-3">
+                        <div class="listed-object col-sm-3 listed-with-brethren">
                             <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
                                 <h3 class="object-title">{{tip.title}}</h3>
                             </a>
