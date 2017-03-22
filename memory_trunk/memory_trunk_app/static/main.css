@@ -50,22 +50,19 @@ h1 {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   border: 1px solid black;
   background-color: white;
   text-align: center; 
+  margin-top: 5rem;
 }
 
 .object-maker {
     border: 1px solid gray;
     padding: 2rem;
 }
-
-/*.object-maker>textarea {
-    display: block;
-}*/
 
 #object_content {
     display: block;
