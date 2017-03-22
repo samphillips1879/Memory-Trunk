@@ -142,6 +142,10 @@ h1 {
     box-shadow: 0 0 15px #888888;
 }
 
+.fifty {
+    height: 50vh;
+}
+
 
 
 label {
