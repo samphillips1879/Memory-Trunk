@@ -48,6 +48,16 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Likes <span class="glyphicon glyphicon-menu-down"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/liked_memories/{{request.user.id}}">Memories</a>
+                        <a class="dropdown-item" href="/liked_tips/{{request.user.id}}">Tips</a>
+                        <a class="dropdown-item" href="/liked_perspectives/{{request.user.id}}">Perspectives</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Community Trunk <span class="glyphicon glyphicon-menu-down"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
