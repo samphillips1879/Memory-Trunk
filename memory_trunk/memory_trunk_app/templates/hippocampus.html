@@ -2,7 +2,7 @@
 {% block content %}
     <form class="" action="{% url 'memory_trunk_app:hippocampus' %}" method="post">
         {% csrf_token %}
-        {{form}}
+        {{form.as_p}}
         <button class="btn btn-danger" type="submit">Save Details</button>
     </form>
 {% endblock %}
