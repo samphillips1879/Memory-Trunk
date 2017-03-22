@@ -122,10 +122,11 @@ h1 {
     margin-left: 5.5%;
 }
 
-.bordered {
+.navvy {
     border: 2px solid black;
     background-color: #ADE1FF;
 }
+
 
 
 label {
