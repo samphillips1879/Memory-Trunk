@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, Textarea
 from memory_trunk_app import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -15,4 +15,7 @@ class PerspectiveForm(ModelForm):
         fields = ['title', 'is_public', 'content', 'tags',]
         labels = {
             'is_public': _('Share this Perspective with other users?'),
+        }
+        widgets = {
+            'content': Textarea(attrs={'id': 'object_content'}),
         }

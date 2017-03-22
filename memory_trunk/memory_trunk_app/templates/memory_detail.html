@@ -2,32 +2,49 @@
 
 {% block content %}
     {# Memory object display container #}
-    <div class="container">
-        <h2>{{memory.title}}</h2>
-        <h4>by {{memory.user.username}}</h4>
-        <h6>{{memory.date}} - {{memory.location}}</h6>
-        <p>{{memory.content}}</p>
+    <div class="row">
+        <div class="container-fluid content-block col-sm-6 col-sm-offset-3">
+            <div class="row">
+                <div class="col-sm-12 container-fluid">
+                    <div class="row shadowed">
+                        <h2 class="col-sm-9 col-sm-offest-1">Memory: {{memory.title}}</h2>
+                        <h5 class="col-sm-1">by {{memory.user.username}}</h5>
+                    </div>
 
-        {% if request.user in memory.likes.all %}
-            <a href="{% url 'memory_trunk_app:dislike_memory' id=memory.id %}">
-                <button class="btn btn-danger">Dislike</button>
-            </a>
-        {% else %}
-            <a href="{% url 'memory_trunk_app:like_memory' id=memory.id %}">
-                <button class="btn btn-success">Like</button>
-            </a>
-        {% endif %}
-        
-        
+                    <div class="row">
+                        <div class="detail-block col-sm-10 col-sm-offset-1">
+                            <h6>{{memory.date}} - {{memory.location}}</h6>
+                            <p>{{memory.content}}</p>
+                        </div>
+                    </div>
 
+                    
+                    <div class="row">
+                        {# like-dependent buttons #}
+                        {% if request.user in memory.likes.all %}
+                            <a href="{% url 'memory_trunk_app:dislike_memory' id=memory.id %}">
+                                <button class="btn btn-danger col-sm-2 col-sm-offset-1">Dislike</button>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'memory_trunk_app:like_memory' id=memory.id %}">
+                                <button class="btn btn-success col-sm-2 col-sm-offset-1">Like</button>
+                            </a>
+                        {% endif %}
+                        
+                        
 
-        {% if request.user.id == memory.user.id %}
-            <a href="{% url 'memory_trunk_app:delete_memory' id=memory.id %}">
-                <button class="btn btn-danger">Delete</button>
-            </a>
-            <a href="{% url 'memory_trunk_app:update_memory' id=memory.id %}">
-                <button class="btn btn-info">Edit</button>
-            </a>
-        {% endif %}
+                        {# author-dependent buttons #}
+                        {% if request.user.id == memory.user.id %}
+                            <a href="{% url 'memory_trunk_app:delete_memory' id=memory.id %}">
+                                <button class="btn btn-danger col-sm-2 col-sm-offset-1">Delete</button>
+                            </a>
+                            <a href="{% url 'memory_trunk_app:update_memory' id=memory.id %}">
+                                <button class="btn btn-info col-sm-2 col-sm-offset-1">Edit</button>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
