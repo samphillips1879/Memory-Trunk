@@ -39,4 +39,11 @@ def hippocampus_view(request):
     else:
         form = MemoryForm()
 
-    return render(request, 'hippocampus.html', {'form': form})
+    return render(
+        request, 
+        'hippocampus.html', 
+        {
+            'form': form,
+            'page_title': 'Make a Memory'
+        }
+    )

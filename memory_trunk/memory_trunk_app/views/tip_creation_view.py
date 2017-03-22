@@ -35,4 +35,8 @@ def tip_creation_view(request):
     else:
         form = TipForm()
 
-    return render(request, 'tip_creation.html', {'form': form})
+    return render(
+        request, 
+        'tip_creation.html', 
+        {'form': form, 'page_title': 'Offer a Tip'}
+    )

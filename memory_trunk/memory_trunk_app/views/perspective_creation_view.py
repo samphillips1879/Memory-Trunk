@@ -34,4 +34,8 @@ def perspective_creation_view(request):
     else:
         form = PerspectiveForm()
 
-    return render(request, 'perspective_creation.html', {'form': form})
+    return render(
+        request, 
+        'perspective_creation.html', 
+        {'form': form, 'page_title': 'Share a Perspective'}
+    )
