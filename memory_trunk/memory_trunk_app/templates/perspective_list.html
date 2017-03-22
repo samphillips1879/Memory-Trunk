@@ -6,10 +6,12 @@
             <div class="content-block col-md-10 col-md-offset-1">
                 <h2 class="content-title">{{page_title}}</h2>
                 {% for perspective in perspectives %}
-                    <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
-                        <h3>{{perspective.title}}</h3>
-                    </a>
-                    <h5>by {{perspective.user.username}}</h5>
+                    <div class="listed-object">
+                        <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
+                            <h3>{{perspective.title}}</h3>
+                        </a>
+                        <h5>by {{perspective.user.username}}</h5>
+                    </div>
                 {% endfor %}
             </div>
         </div>

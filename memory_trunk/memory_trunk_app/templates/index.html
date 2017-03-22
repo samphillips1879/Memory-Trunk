@@ -116,7 +116,8 @@
             {# Header #}
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Welcome to MemoryTrunk</h1>
+                    <h1 class="positive-title">MemoryTrunk</h1>
+                    <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
                 </div>
             </div>
 
@@ -125,7 +126,7 @@
                 <div class="col-sm-10 col-sm-offset-1 container-fluid">
                     <div id="index_community_blocks" class="row">
                         <div class="content-block col-md-4">
-                            <h2 class="content-title">Community Memories</h2>
+                            <h2 class="content-title">Memories</h2>
                             {% for mem in memories %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
@@ -136,7 +137,7 @@
                             {% endfor %}
                         </div>
                         <div class="content-block col-md-4">
-                            <h2 class="content-title">Community Tips</h2>
+                            <h2 class="content-title">Tips</h2>
                             {% for tip in tips %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
@@ -147,7 +148,7 @@
                             {% endfor %}
                         </div>
                         <div class="content-block col-md-4 last_cb">
-                            <h2 class="content-title">Community Perspectives</h2>
+                            <h2 class="content-title">Perspectives</h2>
                             {% for perspective in perspectives %}
                                 <div class="listed-object">
                                     <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">

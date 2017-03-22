@@ -6,10 +6,12 @@
             <div class="content-block col-md-10 col-md-offset-1">
                 <h2 class="content-title">{{page_title}}</h2>
                 {% for mem in memories %}
-                    <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
-                        <h3>{{mem.title}}</h3>
-                    </a>
-                    <h5>by {{mem.user.username}}</h5>
+                    <div class="listed-object">
+                        <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
+                            <h3>{{mem.title}}</h3>
+                        </a>
+                        <h5>by {{mem.user.username}}</h5>
+                    </div>
                 {% endfor %}
             </div>
         </div>

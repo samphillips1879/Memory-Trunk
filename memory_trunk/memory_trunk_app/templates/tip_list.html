@@ -3,14 +3,18 @@
 {% block content %}
     <div class='container-fluid'>
         <div class="row">
-            <div class="content-block col-md-10 col-md-offset-1">
+            <div class="content-block col-md-10 col-md-offset-1 container-fluid">
                 <h2 class="content-title">{{page_title}}</h2>
-                {% for tip in tips %}
-                    <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
-                        <h3>{{tip.title}}</h3>
-                    </a>
-                    <h5>by {{tip.user.username}}</h5>
-                {% endfor %}
+                <div class="row center-text">
+                    {% for tip in tips %}
+                        <div class="listed-with-brethren col-sm-3">
+                            <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
+                                <h3 class="object-title">{{tip.title}}</h3>
+                            </a>
+                            <h5>by {{tip.user.username}}</h5>
+                        </div>    
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
