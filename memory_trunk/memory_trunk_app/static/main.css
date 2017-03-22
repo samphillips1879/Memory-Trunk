@@ -149,7 +149,12 @@ label {
 }
 .content-title {
     text-align: center;
-    border-bottom: 1px solid #9AACB8;
+    margin-bottom: 0.5rem;
     color: black;
     font-weight: 200;
+}
+
+.list-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }

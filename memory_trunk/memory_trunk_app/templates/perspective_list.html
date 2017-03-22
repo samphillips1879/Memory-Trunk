@@ -4,8 +4,10 @@
     <div class='container-fluid'>
         <div class="row">
             <div class="content-block col-md-10 col-md-offset-1 container-fluid">
-                <h2 class="content-title">{{page_title}}</h2>
-                <div class="row">
+                <div class="row shadowed">
+                    <h2 class="content-title">{{page_title}}</h2>
+                </div>
+                <div class="row list-container">
                     {% for perspective in perspectives %}
                         <div class="listed-object col-sm-3 listed-with-brethren">
                             <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
