@@ -2,3 +2,19 @@
     margin: 1rem;
     display: block;
 }
+
+.dropdown-toggle::before {
+    content: "|\00a0\00a0\00a0";
+}
+
+.drowpdown-toggle {
+    text-indent: 10rem;
+}
+
+.nav>li>a {
+    padding-left: 0;
+}
+
+.glyphicon-triangle-bottom {
+    font-size: 65%;
+}
