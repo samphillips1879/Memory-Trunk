@@ -13,12 +13,12 @@ class LikedPerspectivesView(TemplateView):
     template_name = 'perspective_list.html'
 
     def get(self, request, id):
-        perspectives = models.Perspective.objects.filter(user=id)
+        perspectives = request.user.perspective_likes.all()
         return render(
             request, 
             self.template_name, 
             {
                 'perspectives': perspectives,
-                'page_title': 'My Perspectives'
+                'page_title': 'Liked Perspectives'
             }
         )

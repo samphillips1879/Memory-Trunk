@@ -13,7 +13,7 @@ class LikedTipsView(TemplateView):
     template_name = 'tip_list.html'
 
     def get(self, request, id):
-        tips = request.user.memory_likes_set.all()
+        tips = request.user.tip_likes.all()
         return render(
             request, 
             self.template_name, 

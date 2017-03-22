@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^login', views.login_views.LoginUserView.as_view(), name='login_user_view'),
 
 
-    # CREATION FORM VIEWS
+    # CREATION FORMS
     
         # Memory
     url(r'^hippocampus', views.hippocampus_view, name='hippocampus'),
@@ -38,17 +38,17 @@ urlpatterns = [
         # Memory
     url(r'^memory_list/(?P<id>\d+)/$', login_required(views.MemoryListView.as_view()), name='memory_list'),
     url(r'^community_memories/', views.PublicMemoryListView.as_view(), name='public_memory_list'),
-    url(r'^liked_memories/(?P<id>\d+)/$', views.LikedMemoriesListView.as_view(), name='liked_memories'),
+    url(r'^liked_memories/(?P<id>\d+)/$', views.LikedMemoriesView.as_view(), name='liked_memories'),
 
         # Tip
     url(r'^tip_list/(?P<id>\d+)/$', login_required(views.TipListView.as_view()), name='tip_list'),
     url(r'^community_tips/', views.PublicTipListView.as_view(), name='public_tip_list'),
-    url(r'^liked_tips/(?P<id>\d+)/$', views.LikedTipsListView.as_view(), name='liked_tips'),
+    url(r'^liked_tips/(?P<id>\d+)/$', views.LikedTipsView.as_view(), name='liked_tips'),
 
         # Perspective
     url(r'^perspective_list/(?P<id>\d+)/$', login_required(views.PerspectiveListView.as_view()), name='perspective_list'),
     url(r'^community_perspectives/', views.PublicPerspectiveListView.as_view(), name='public_perspective_list'),
-    url(r'^liked_perspectives/(?P<id>\d+)/$', views.LikedPerspectivesListView.as_view(), name='liked_perspectives'),
+    url(r'^liked_perspectives/(?P<id>\d+)/$', views.LikedPerspectivesView.as_view(), name='liked_perspectives'),
 
 
     # DETAIL VIEWS
@@ -75,7 +75,7 @@ urlpatterns = [
     url(r'^delete_perspective/(?P<id>\d+)/$', views.delete_perspective, name='delete_perspective'),
 
 
-    # UPDATE VIEWS
+    # OBJECT UPDATE VIEWS
 
         # Memory
     url(r'^update_memory/(?P<id>\d+)/$', views.update_memory, name='update_memory'),

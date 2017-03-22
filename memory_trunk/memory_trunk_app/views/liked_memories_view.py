@@ -13,12 +13,12 @@ class LikedMemoriesView(TemplateView):
     template_name = 'memory_list.html'
 
     def get(self, request, id):
-        perspectives = models.Perspective.objects.filter(user=id)
+        memories = request.user.memory_likes.all()
         return render(
             request, 
             self.template_name, 
             {
-                'perspectives': perspectives,
-                'page_title': 'My Perspectives'
+                'memories': memories,
+                'page_title': 'Liked Memories'
             }
         )
