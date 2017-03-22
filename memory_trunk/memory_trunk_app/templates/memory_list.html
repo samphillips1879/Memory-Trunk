@@ -1,20 +1,21 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{page_title}}</h1>
-        {% for memory in memories %}
-            <a href="{% url 'memory_trunk_app:memory_detail' id=memory.id %}
-            ">
-                <h2>
-                    {{memory.title}} 
-                    {% if page_title == 'Community Memories' %}
-                        - {{memory.user.username}}
-                    {% endif %}
-                </h2>
-            </a>
-        {% endfor %}
+    <div class='container-fluid'>
+        <div class="row">
+            <div class="content-block col-md-10 col-md-offset-1">
+                {% if page_title == 'Community Memories' %}
+                    <h2 class="content-title">Community Memories</h2>
+                {% else %}
+                    <h2 class="content-title">My Memories</h2>
+                {% endif %}
+                {% for mem in memories %}
+                    <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
+                        <h3>{{mem.title}}</h3>
+                    </a>
+                    <h5>by {{mem.user.username}}</h5>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    
 {% endblock %}
-
