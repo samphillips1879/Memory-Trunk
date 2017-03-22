@@ -1,20 +1,18 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{page_title}}</h1>
-        {% for perspective in perspectives %}
-            <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}
-            ">
-                <h2>
-                    {{perspective.title}} 
-                    {% if page_title == 'Community Perspectives' %}
-                        - {{perspective.user.username}}
-                    {% endif %}
-                </h2>
-            </a>
-        {% endfor %}
+    <div class='container-fluid'>
+        <div class="row">
+            <div class="content-block col-md-10 col-md-offset-1">
+                <h2 class="content-title">{{page_title}}</h2>
+                {% for perspective in perspectives %}
+                    <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
+                        <h3>{{perspective.title}}</h3>
+                    </a>
+                    <h5>by {{perspective.user.username}}</h5>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    
 {% endblock %}
 

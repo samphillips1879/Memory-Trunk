@@ -4,11 +4,7 @@
     <div class='container-fluid'>
         <div class="row">
             <div class="content-block col-md-10 col-md-offset-1">
-                {% if page_title == 'Community Memories' %}
-                    <h2 class="content-title">Community Memories</h2>
-                {% else %}
-                    <h2 class="content-title">My Memories</h2>
-                {% endif %}
+                <h2 class="content-title">{{page_title}}</h2>
                 {% for mem in memories %}
                     <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
                         <h3>{{mem.title}}</h3>
