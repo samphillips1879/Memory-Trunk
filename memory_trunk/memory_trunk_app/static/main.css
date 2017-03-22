@@ -38,22 +38,15 @@ body {
     height: 80vh;
 }
 
-/*.content-block>*/
-
-
 #index_community_blocks {
     border-left: 1px solid #9AACB8;
     border-right: 1px solid #9AACB8;
     border-bottom: 1px solid #9AACB8;
     background-color: #ADE1FF;
-    /*box-shadow: 0 0 30px #888888;*/
     margin-top: 2rem;
 }
 
 .content-block {
-    /*border-left: 1px solid #9AACB8;
-    border-right: 1px solid #9AACB8;
-    border-bottom: 1px solid #9AACB8;*/
     height: 70vh;
     border: 1px solid #9AACB8;  
     overflow: scroll;
@@ -145,8 +138,6 @@ h1 {
 .fifty {
     height: 50vh;
 }
-
-
 
 label {
     top: 0;
