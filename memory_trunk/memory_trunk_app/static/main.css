@@ -1,3 +1,16 @@
+/*
+colors
+#FFDCAD - Primary
+#FFE7C6 - Light Secondary
+#B29267 - Dark Secondary
+#ADE1FF - Light Accent
+#5591B2 - Dark Accent
+*/
+
+body {
+    background-color: rgba(178,146,103, 0.2);
+}
+
 .dropdown-item {
     margin: 1rem;
     display: block;
@@ -25,22 +38,24 @@
 }
 
 .content-block {
-    height: 80vh;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;   
+    height: 70vh;
+    border: 1px solid gray;  
     overflow: scroll;
 }
 
 .content-block>.content-title {
     text-align: center;
-    border-bottom: 1px solid gray;   
+    border-bottom: 1px solid gray;
+    color: black;
+    font-weight: 200;
 }
 
 #index_community_blocks {
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
+    background-color: rgba(255,231,198, 0.7);
+    /*background-color: rgba(255,231,198, 0.7);*/
 }
 
 h1 {
@@ -54,7 +69,7 @@ h1 {
   bottom: 0;
   width: 100%;
   border: 1px solid black;
-  background-color: white;
+  background-color: rgba(255,231,198, 0.7);
   text-align: center; 
   margin-top: 5rem;
 }
@@ -66,6 +81,34 @@ h1 {
 
 #object_content {
     display: block;
+}
+
+.object-title {
+    color: black;
+    font-weight: 200;
+    font-size: 1.5em;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.listed-object {
+    border: 1px solid #5591B2;
+    padding-left: 1rem;
+    margin: 1rem;
+    background-color: rgba(178,146,103, 0.4);
+}
+
+.listed-object>h5 {
+    margin-top: 0.5rem;
+}
+
+.bordered {
+    border: 2px solid black;
+    background-color: rgba(255,231,198, 0.7);
+}
+
+nav {
+    border: 2px solid black;
 }
 
 label {

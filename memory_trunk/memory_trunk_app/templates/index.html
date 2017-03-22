@@ -11,7 +11,7 @@
 
 {# navbar start #}
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid bordered">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -121,35 +121,46 @@
             </div>
 
             {# Body containing blocks for last ten Memory, Tip, and Perspective objects #}
-            <div id="index_community_blocks" class="row">
-                <div class="content-block col-md-4">
-                    <h2 class="content-title">Community Memories</h2>
-                    {% for mem in memories %}
-                        <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
-                            <h3>{{mem.title}}</h3>
-                        </a>
-                        <h5>by {{mem.user.username}}</h5>
-                    {% endfor %}
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 container-fluid">
+                    <div id="index_community_blocks" class="row">
+                        <div class="content-block col-md-4">
+                            <h2 class="content-title">Community Memories</h2>
+                            {% for mem in memories %}
+                                <div class="listed-object">
+                                    <a href="{% url 'memory_trunk_app:memory_detail' id=mem.id %}">
+                                        <h3 class="object-title">{{mem.title}}</h3>
+                                    </a>
+                                    <h5>by {{mem.user.username}}</h5>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="content-block col-md-4">
+                            <h2 class="content-title">Community Tips</h2>
+                            {% for tip in tips %}
+                                <div class="listed-object">
+                                    <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
+                                        <h3 class="object-title">{{tip.title}}</h3>
+                                    </a>
+                                    <h5>by {{tip.user.username}}</h5>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="content-block col-md-4 last_cb">
+                            <h2 class="content-title">Community Perspectives</h2>
+                            {% for perspective in perspectives %}
+                                <div class="listed-object">
+                                    <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
+                                        <h3 class="object-title">{{perspective.title}}</h3>
+                                    </a>
+                                    <h5>by {{perspective.user.username}}</h5>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    
                 </div>
-                <div class="content-block col-md-4">
-                    <h2 class="content-title">Community Tips</h2>
-                    {% for tip in tips %}
-                        <a href="{% url 'memory_trunk_app:tip_detail' id=tip.id %}">
-                            <h3>{{tip.title}}</h3>
-                        </a>
-                        <h5>by {{tip.user.username}}</h5>
-                    {% endfor %}
-                </div>
-                <div class="content-block col-md-4 last_cb">
-                    <h2 class="content-title">Community Perspectives</h2>
-                    {% for perspective in perspectives %}
-                        <a href="{% url 'memory_trunk_app:perspective_detail' id=perspective.id %}">
-                            <h3>{{perspective.title}}</h3>
-                        </a>
-                        <h5>by {{perspective.user.username}}</h5>
-                    {% endfor %}
-                </div>
-                
             </div>
         {% endblock %}
     </div>
