@@ -14,6 +14,8 @@
                                 <h3 class="object-title">{{perspective.title}}</h3>
                             </a>
                             <h5>by {{perspective.user.username}}</h5>
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            ({{perspective.get_likes_count}})
                         </div>
                     {% endfor %}
                 </div>

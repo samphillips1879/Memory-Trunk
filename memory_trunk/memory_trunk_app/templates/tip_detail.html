@@ -11,8 +11,6 @@
                         <h2 class="col-sm-9 col-sm-offest-1">Tip: {{tip.title}}</h2>
                         <h5 class="col-sm-1">by {{tip.user.username}}</h5>
                     </div>
-
-
                     <div class="row">
                         <div class="detail-block col-sm-10 col-sm-offset-1">
                             <p>{{tip.content}}</p>
@@ -22,11 +20,17 @@
                     <div class="row">
                         {% if request.user in tip.likes.all %}
                             <a href="{% url 'memory_trunk_app:dislike_tip' id=tip.id %}">
-                                <button class="btn btn-danger shadowed col-sm-2 col-sm-offset-1">Dislike</button>
+                                <button class="btn btn-danger shadowed col-sm-2 col-sm-offset-1">
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    ({{tip.get_likes_count}})
+                                </button>
                             </a>
                         {% else %}
                             <a href="{% url 'memory_trunk_app:like_tip' id=tip.id %}">
-                                <button class="btn btn-success shadowed col-sm-2 col-sm-offset-1">Like</button>
+                                <button class="btn btn-success shadowed col-sm-2 col-sm-offset-1">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    ({{tip.get_likes_count}})
+                                </button>
                             </a>
                         {% endif %}
 
