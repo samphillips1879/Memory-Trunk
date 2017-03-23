@@ -32,8 +32,7 @@ def search(request, user=None):
         ObjClass = models.Perspective
         model_name = 'perspectives'
 
-    objects = ObjClass.objects.filter(content__icontains=query) | ObjClass.objects.filter(title__icontains=query) 
-    # | ObjClass.objects.filter(tags__icontains=query)
+    objects = ObjClass.objects.filter(content__icontains=query) | ObjClass.objects.filter(title__icontains=query) | ObjClass.objects.filter(tags__name__in=[query])
 
     context[model_name] = objects
 

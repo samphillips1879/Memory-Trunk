@@ -8,12 +8,12 @@
                     <h2 class="content-title col-sm-6 container-fluid">{{page_title}}</h2>
                     <form action="{% url 'memory_trunk_app:search' %}" method="get">
                         <div class="input-group col-sm-5 search-bar">
+                                <input type="hidden" name="model" value="Tip" />
                                 <input type="text" class="form-control" placeholder="Search" name="query">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default glyphicon glyphicon-search" type="submit">
                                     </button>
                                 </span>
-                                <input type="hidden" name="model" value="Tip" />
                         </div><!-- /input-group -->
                     </form>
                 </div>
