@@ -122,14 +122,9 @@
                     {# search bar #}
                     <form class="col-sm-5 search-form container-fluid" action="{% url 'memory_trunk_app:search' %}" method="get">
                         <div class="row">
-                            <input type="text" class="col-sm-6 search-input" placeholder="Search" name="query">
-                            <button class="btn btn-default glyphicon glyphicon-search col-sm-2 search-input" type="submit">
+                            <input type="text" class="col-md-10 search-input" placeholder="Search" name="query">
+                            <button class="btn btn-default glyphicon glyphicon-search col-md-2 search-input" type="submit">
                             </button>
-                            <select name='model' class="selectpicker search-input col-sm-4">
-                                <option value="Memory">Memory</option>
-                                <option value="Tip">Tip</option>
-                                <option value="Perspective">Perspective</option>
-                            </select>
                         </div>
                     </form>
                 </div>
