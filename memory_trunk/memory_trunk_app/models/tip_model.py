@@ -87,3 +87,10 @@ class Tip(models.Model):
     def get_cname(self):
         class_name = "tip"
         return class_name 
+
+    def get_likes_count(self):
+        likes = self.likes.all()
+        count = len(likes)
+        if count < 1:
+            return 0
+        return count

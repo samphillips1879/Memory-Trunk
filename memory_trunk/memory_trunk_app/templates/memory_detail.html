@@ -23,11 +23,17 @@
                         {# like-dependent buttons #}
                         {% if request.user in memory.likes.all %}
                             <a href="{% url 'memory_trunk_app:dislike_memory' id=memory.id %}">
-                                <button class="btn btn-danger col-sm-2 col-sm-offset-1">Dislike</button>
+                                <button class="btn btn-danger shadowed col-sm-2 col-sm-offset-1">
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                    ({{memory.get_likes_count}})
+                                </button>
                             </a>
                         {% else %}
                             <a href="{% url 'memory_trunk_app:like_memory' id=memory.id %}">
-                                <button class="btn btn-success col-sm-2 col-sm-offset-1">Like</button>
+                                <button class="btn btn-success shadowed col-sm-2 col-sm-offset-1">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    ({{memory.get_likes_count}})
+                                </button>
                             </a>
                         {% endif %}
                         
