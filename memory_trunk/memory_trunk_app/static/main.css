@@ -44,6 +44,7 @@ body {
     border-bottom: 1px solid #9AACB8;
     background-color: #ADE1FF;
     margin-top: 2rem;
+    border-radius: 10px;
 }
 
 .content-block {
@@ -53,6 +54,7 @@ body {
     background-color: #ADE1FF;
     margin-top: 3rem;
     box-shadow: 0 0 30px #888888;
+    border-radius: 10px;
 }
 
 .index-block {
@@ -99,12 +101,13 @@ h1 {
 
 .listed-object {
     border: 2px solid #5591B2;
-    padding-left: 1rem;
+    padding: 0 1rem 1rem 1rem;
     margin: 1rem;
     background-color: rgba(96,65,43, 0.3);
     overflow: scroll;
     height: 15rem;
     box-shadow: 5px 5px 5px #888888;
+    border-radius: 10px;
 }
 
 .listed-object>h5 {
