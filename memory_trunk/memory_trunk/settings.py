@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taggit',
     'memory_trunk_app',
+    'datetimewidget',
 ]
 
 MIDDLEWARE = [
