@@ -29,3 +29,6 @@ from .perspective_detail_view import PerspectiveDetailView, like_perspective, di
 from .delete_perspective_view import delete_perspective
 from .update_perspective_view import update_perspective
 from .liked_perspectives_view import LikedPerspectivesView
+
+# Search
+from .model_search_view import search

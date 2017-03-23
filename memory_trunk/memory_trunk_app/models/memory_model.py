@@ -84,6 +84,7 @@ class Memory(models.Model):
 
         self.likes.add(user)
 
-
-
+    def get_cname(self):
+        class_name = "memory"
+        return class_name 
 

@@ -113,9 +113,21 @@
 {# navbar end #}
     <div class="container-fluid mt-header">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="positive-title">MemoryTrunk</h1>
-                <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
+            <div class="col-md-12 container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 class="positive-title">MemoryTrunk</h1>
+                        <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
+                    </div>
+                    {# search bar #}
+                    <form class="col-sm-5 search-form container-fluid" action="{% url 'memory_trunk_app:search' %}" method="get">
+                        <div class="row">
+                            <input type="text" class="col-md-10 search-input" placeholder="Search" name="query">
+                            <button class="btn btn-default glyphicon glyphicon-search col-md-2 search-input" type="submit">
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -171,7 +183,7 @@
     </div>
 
     <div class="footer">
-        <a href="https://samcphillips.com"><h6>&copy; Samuel Phillips 2017</h6></a>
+        <a href="https://samcphillips.com"><h6>&copy; Sam Phillips 2017</h6></a>
     </div>
 
 <script src="{% static 'lib/jquery.min.js' %}"></script>

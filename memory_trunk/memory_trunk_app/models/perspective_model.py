@@ -82,3 +82,7 @@ class Perspective(models.Model):
         """
 
         self.memories.add(memory)
+
+    def get_cname(self):
+        class_name = "perspective"
+        return class_name 

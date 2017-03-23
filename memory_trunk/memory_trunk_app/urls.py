@@ -101,4 +101,11 @@ urlpatterns = [
     url(r'^like_perspective/(?P<id>\d+)/$', views.like_perspective, name='like_perspective'),
     url(r'^dislike_perspective/(?P<id>\d+)/$', views.dislike_perspective, name='dislike_perspective'),
 
+
+    # SEARCH
+    url(r'^search/$', views.search, name='search'),
+
+
+
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

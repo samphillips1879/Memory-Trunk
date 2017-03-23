@@ -153,3 +153,8 @@ label {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.search-input {
+    height: 4rem;
+    border-radius: 5px;
+}
