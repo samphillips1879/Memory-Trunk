@@ -83,3 +83,7 @@ class Tip(models.Model):
         """
 
         self.memories.add(memory)
+
+    def get_cname(self):
+        class_name = "tip"
+        return class_name 

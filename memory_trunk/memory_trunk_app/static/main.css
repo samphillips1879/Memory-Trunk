@@ -156,6 +156,7 @@ label {
 
 .search-input {
     height: 4rem;
+    margin-left: 10px;
 }
 
 /*.search-bar {

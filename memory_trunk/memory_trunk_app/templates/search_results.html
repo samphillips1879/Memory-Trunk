@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class='container-fluid'>
+        <div class="row">
+            <div class="content-block col-md-10 col-md-offset-1 container-fluid">
+                <div class="row shadowed">
+                    <h2 class="content-title col-sm-6">{{page_title}}</h2>
+                </div>
+                <div class="row list-container">
+                    {% for object in objects %}
+                        <div class="listed-object col-sm-3 listed-with-brethren">
+                            <a href="/{{object.get_cname}}_detail/{{object.id}}">
+                                <h3 class="object-title">{{object.get_cname}}: {{object.title}}</h3>
+                            </a>
+                            <h5>by {{object.user.username}}</h5>
+                        </div>    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

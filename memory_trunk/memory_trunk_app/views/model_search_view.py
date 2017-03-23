@@ -13,35 +13,44 @@ def search(request, user=None):
 
     Author: Sam Phillips <samcphillips.com>
     """
-    model = request.GET.get('model', '')
+    # model = request.GET.get('model', '')
     query = request.GET.get('query', '')
 
+    mods = [models.Memory, models.Tip, models.Perspective,]
+
     context = {}
-    template_name = ''
+    template_name = 'search_results.html'
     ObjClass = None
     model_name = ''
     page_title = ''
-    if model == 'Memory':
-        template_name = 'memory_list.html'
-        ObjClass = models.Memory
-        model_name = 'memories'
-        page_title = 'Memory Results'
-    elif model == 'Tip':
-        template_name = 'tip_list.html'
-        ObjClass = models.Tip
-        model_name = 'tips'
-        page_title = 'Tip Results'
-    elif model == 'Perspective':
-        template_name = 'perspective_list.html'
-        ObjClass = models.Perspective
-        model_name = 'perspectives'
-        page_title = 'Perspective Results'
 
-    objects = ObjClass.objects.filter(content__icontains=query) | ObjClass.objects.filter(title__icontains=query) | ObjClass.objects.filter(tags__name__in=[query])
-    objects = set(objects)
+    objects = set()
+    # if model == 'Memory':
+    #     template_name = 'memory_list.html'
+    #     ObjClass = models.Memory
+    #     model_name = 'memories'
+    #     page_title = 'Memory Results'
+    # elif model == 'Tip':
+    #     template_name = 'tip_list.html'
+    #     ObjClass = models.Tip
+    #     model_name = 'tips'
+    #     page_title = 'Tip Results'
+    # elif model == 'Perspective':
+    #     template_name = 'perspective_list.html'
+    #     ObjClass = models.Perspective
+    #     model_name = 'perspectives'
+    #     page_title = 'Perspective Results'
+    for model in mods:
+        objects.update(model.objects.filter(content__icontains=query) | model.objects.filter(title__icontains=query) | model.objects.filter(tags__name__in=[query]))
 
-    context[model_name] = objects
-    context['page_title'] = page_title
+
+
+
+
+    # objects = set(objects)
+
+    context['objects'] = objects
+    context['page_title'] = 'Search Results'
 
     return render(
         request,
