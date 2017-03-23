@@ -154,8 +154,29 @@ label {
     padding-bottom: 2rem;
 }
 
-.search-bar {
+.search-input {
+    height: 4rem;
+}
+
+/*.search-bar {
     margin-top: 15px;
     border-radius: 20px;
     border: 0;
-}
+}*/
+
+/*.search-form {
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    top: 1rem;
+}*/
+
+/*.form-control {
+    display: inline-block;
+    width: 80px;
+}*/
+
+/*.input-group-btn {
+    display: inline-block;
+}*/

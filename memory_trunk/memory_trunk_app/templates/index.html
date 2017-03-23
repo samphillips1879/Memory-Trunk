@@ -113,9 +113,26 @@
 {# navbar end #}
     <div class="container-fluid mt-header">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="positive-title">MemoryTrunk</h1>
-                <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
+            <div class="col-md-12 container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 class="positive-title">MemoryTrunk</h1>
+                        <p class="positive-title">  &nbsp;  &nbsp; Crowdsourcing Life Experiences</p>
+                    </div>
+                    {# search bar #}
+                    <form class="col-sm-5 search-form container-fluid" action="{% url 'memory_trunk_app:search' %}" method="get">
+                        <div class="row">
+                            <input type="text" class="col-sm-6 search-input" placeholder="Search" name="query">
+                            <select name='model' class="selectpicker search-input col-sm-4">
+                                <option value="Memory">Memory</option>
+                                <option value="Tip">Tip</option>
+                                <option value="Perspective">Perspective</option>
+                            </select>
+                            <button class="btn btn-default glyphicon glyphicon-search col-sm-2 search-input" type="submit">
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
