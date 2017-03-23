@@ -35,7 +35,6 @@ class Tip(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=True)
     title = models.CharField(max_length=100, default="")
-    do = models.BooleanField(default=1)
     is_public = models.BooleanField(default=1)
     content = models.TextField(default="")
     tags = TaggableManager()

@@ -22,7 +22,6 @@ def tip_creation_view(request):
             tip = models.Tip.objects.create(
                 user=request.user,
                 title=form.cleaned_data['title'],
-                do=form.cleaned_data['do'],
                 is_public=form.cleaned_data['is_public'],
                 content=form.cleaned_data['content'],
             )

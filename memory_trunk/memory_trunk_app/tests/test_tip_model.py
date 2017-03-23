@@ -53,7 +53,6 @@ class TestTipModel(TestCase):
         self.new_tip = models.Tip.objects.create(
             user = self.user,
             title = "Sleep as much as you can before having a baby",
-            do = 1,
             is_public = 1,
             content = """
                 Having a baby is amazing, but it's also exhausting. 
@@ -73,7 +72,6 @@ class TestTipModel(TestCase):
             "Sleep as much as you can before having a baby", 
             self.new_tip.title
         )
-        self.assertEqual(1, self.new_tip.do)
         self.assertEqual(1, self.new_tip.is_public)
         self.assertEqual("""
                 Having a baby is amazing, but it's also exhausting. 

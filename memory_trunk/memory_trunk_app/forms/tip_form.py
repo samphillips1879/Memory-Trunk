@@ -12,7 +12,7 @@ class TipForm(ModelForm):
 
     class Meta:
         model = models.Tip
-        fields = ['title', 'is_public', 'do', 'content', 'tags',]
+        fields = ['title', 'is_public', 'content', 'tags',]
         labels = {
             'is_public': _('Share this Tip with other users?'),
         }

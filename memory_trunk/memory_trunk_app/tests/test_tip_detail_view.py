@@ -29,7 +29,6 @@ class TestTipDetailView(TestCase):
         self.new_tip = models.Tip.objects.create(
             user = self.user,
             title = "Sleep as much as you can before having a baby",
-            do = 1,
             is_public = 1,
             content = """
                 Having a baby is amazing, but it's also exhausting. 
@@ -43,7 +42,6 @@ class TestTipDetailView(TestCase):
         self.private_tip = models.Tip.objects.create(
             user = self.user,
             title = "Sleep as much as you can before having a baby",
-            do = 1,
             is_public = 0,
             content = """
                 Having a baby is amazing, but it's also exhausting. 
