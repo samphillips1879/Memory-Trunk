@@ -4,37 +4,41 @@ from django.contrib.auth.models import User
 from memory_trunk_app import models
 from django.urls import reverse
 
-class SearchModelView(TemplateView):
+def search(request, user=None):
     """
     Purpose:
-        Search the MemoryTrunk database for specific models relevant
-        to a User-submitted query
+        Act as the switchboard operator for directing search requests
+        from a User-submitted query
 
     Author: Sam Phillips <samcphillips.com>
     """
-    template_name = ''
+    model = request.GET.get('model', '')
+    query = request.GET.get('query', '')
+
     context = {}
-    def get(self, request, model, query):
-        """
-        Purpose:
-            Interpret the User's query, search through the appropriate 
-            model, and return relevant results bound to the appropriate 
-            list view
+    template_name = ''
+    ObjClass = None
+    model_name = ''
+    if model == 'Memory':
+        template_name = 'memory_list.html'
+        ObjClass = models.Memory
+        model_name = 'memories'
+    elif model == 'Tip':
+        template_name = 'tip_list.html'
+        ObjClass = models.Tip
+        model_name = 'tips'
+    elif model == 'Perspective':
+        template_name = 'perspective_list.html'
+        ObjClass = models.Perspective
+        model_name = 'perspectives'
 
-        Arguments:
-            model -- The Django model collection to search through
-            query -- The search parameters
-        """
+    objects = ObjClass.objects.filter(content__icontains=query) | ObjClass.objects.filter(title__icontains=query) 
+    # | ObjClass.objects.filter(tags__icontains=query)
 
-        if model == 'Memory':
-            pass
-        elif model == 'Tip':
-            pass
-        elif model == 'Perspective':
-            pass
+    context[model_name] = objects
 
-        return render(
-            request,
-            self.template_name,
-            self.context
-        )
+    return render(
+        request,
+        template_name,
+        context
+    )
