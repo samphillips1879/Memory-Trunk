@@ -32,3 +32,6 @@ from .liked_perspectives_view import LikedPerspectivesView
 
 # Search
 from .model_search_view import search
+
+# Happy Memory
+from .happy_memory import happy_memory

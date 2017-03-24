@@ -161,3 +161,19 @@ label {
     height: 4rem;
     border-radius: 5px;
 }
+
+#happy-button {
+    margin-right: 30px;
+    margin-top: 7px;
+    background-color: rgba(60,69,92, 0.4);
+    border-color: #9AACB8;
+    color: white;
+}
+
+#happy-button:active {
+    color: #DDE2E3;
+}
+
+#ceiling-link {
+    padding: 0;
+}

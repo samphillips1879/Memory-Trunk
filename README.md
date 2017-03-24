@@ -5,7 +5,7 @@ MemoryTrunk is a database-driven web application built upon the Django framework
 ### Memory 
 When a user experiences an important life event, they may record the details of said event as a Memory object in the MemoryTrunk database. This may be for the user's own sake, to remember it later, or because they believe other users could gain valuable information from it that will help them go through similar life events.
 
-When creating a Memory, user's rank the happiness it gives them from 0-10. This is so they may take advantage of MemoryTrunk's "Happy Memories" interface, which reminds user's of all the memories that have brought them happiness over the years.
+When creating a Memory, user's rank the happiness it gives them from 0-10. This is so they may take advantage of MemoryTrunk's "Happy Memory" button, which reminds user's of memories that have brought them happiness over the years.
 
 
 ### Tip
@@ -22,6 +22,6 @@ MemoryTrunk is not currently hosted on a server. However, that should change wit
 
 MemoryTrunk utilizes Python version 3.6.0 and Django version 1.10.5
 
-After installing these dependencies, you should be able to run the program from a terminal window in the Django project's root directory by running `$ python manage.py runserver`
+After installing these dependencies, you should be able to run the program from a terminal window in the Django project's root directory by first running ```$ python manage.py migrate ``` to set up the database and then running `$ python manage.py runserver 8000` and then navigating to `http://localhost:8000/` in your browser.
 
 
