@@ -33,6 +33,8 @@ def like_perspective(request, id):
 
     Author: Sam Phillips <samcphillips.com>
     """
+    if request.user.is_anonymous():
+        return HttpResponseRedirect(reverse('memory_trunk_app:user_registration'))
     perspective = models.Perspective.objects.get(id=id)
     perspective.likes.add(request.user)
     return HttpResponseRedirect(reverse('memory_trunk_app:perspective_detail', args=(perspective.id,)))

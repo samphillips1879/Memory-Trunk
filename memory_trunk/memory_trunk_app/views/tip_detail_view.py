@@ -33,6 +33,8 @@ def like_tip(request, id):
 
     Author: Sam Phillips <samcphillips.com>
     """
+    if request.user.is_anonymous():
+        return HttpResponseRedirect(reverse('memory_trunk_app:user_registration'))
     tip = models.Tip.objects.get(id=id)
     tip.likes.add(request.user)
     return HttpResponseRedirect(reverse('memory_trunk_app:tip_detail', args=(tip.id,)))
