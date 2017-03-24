@@ -76,6 +76,12 @@
                 <!-- Menu Right Justified -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <button id="happy-button" class="btn shadowed">
+                            {# <button class="btn btn-info shadowed col-sm-6 col-sm-offset-1"> #}
+                                Happy Memory <span class="glyphicon glyphicon-heart-empty"></span>
+                            </button>
+                        </li>
                         <li><a href="#">Welcome, {{ user.first_name }} {{ user.last_name }}</a></li>
                         <li><a href="{% url 'memory_trunk_app:logout_user' %}">Logout</a></li>
                     </ul>
