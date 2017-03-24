@@ -106,6 +106,14 @@ urlpatterns = [
     url(r'^search/$', views.search, name='search'),
 
 
+    # HAPPY
+
+        # Memory
+    url(r'^happy_memory/$', views.happy_memory, name='happy_memory'),
+
+
+
+
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

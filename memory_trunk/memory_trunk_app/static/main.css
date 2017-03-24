@@ -173,3 +173,7 @@ label {
 #happy-button:active {
     color: #DDE2E3;
 }
+
+#ceiling-link {
+    padding: 0;
+}
