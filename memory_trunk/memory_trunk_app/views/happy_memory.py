@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
 from memory_trunk_app import models
 import random
 
-@login_required
 def happy_memory(request):
     """
     Purpose:
@@ -20,13 +18,14 @@ def happy_memory(request):
 
     memories = None
     index = None
+    mem_instance = request.GET.get('mem_instance', 0)
 
     try:
-        memories = models.Memory.objects.filter(user=request.user, happy_factor__gte=6)
-        index = random.randrange(0, len(memories)-1)
-    except ValueError as e:
-        memories = models.Memory.objects.filter(happy_factor__gte=6, is_public=True)
-        index = random.randrange(0, len(memories)-1)
+        memories = models.Memory.objects.filter(user=request.user, happy_factor__gte=6).exclude(id=mem_instance)
+        index = random.randrange(0, len(memories))
+    except (ValueError, TypeError) as e:
+        memories = models.Memory.objects.filter(happy_factor__gte=6, is_public=True).exclude(id=mem_instance)
+        index = random.randrange(0, len(memories))
     happy_memory = memories[index]
     print(happy_memory)
     return HttpResponseRedirect(reverse(
