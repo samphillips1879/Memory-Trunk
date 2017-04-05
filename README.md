@@ -18,7 +18,7 @@ When a user finds a particular view on life - or a situation - to be either enri
 
 ***
 ##### Going Forward/Installation
-MemoryTrunk is not currently hosted on a server. However, that should change within a week. If you wish to use this program in the meantime, you may clone it down to your machine. 
+MemoryTrunk is not yet hosted on a server. If you wish to use this program in the meantime, you may clone it down to your machine. 
 
 MemoryTrunk utilizes Python version 3.6.0 and Django version 1.10.5
 
